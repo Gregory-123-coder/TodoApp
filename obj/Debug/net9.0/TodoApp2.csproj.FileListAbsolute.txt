@@ -194,3 +194,4 @@ C:\greg\TodoApp\TodoApp2\obj\Debug\net9.0\refint\TodoApp2.dll
 C:\greg\TodoApp\TodoApp2\obj\Debug\net9.0\TodoApp2.pdb
 C:\greg\TodoApp\TodoApp2\obj\Debug\net9.0\TodoApp2.genruntimeconfig.cache
 C:\greg\TodoApp\TodoApp2\obj\Debug\net9.0\ref\TodoApp2.dll
+C:\greg\TodoApp\TodoApp2\obj\Debug\net9.0\TodoApp2.sourcelink.json
