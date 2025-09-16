@@ -1,18 +1,11 @@
-# ---------- build stage ----------
+# Use .NET 9 SDK to build
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
-
-COPY *.csproj ./
-RUN dotnet restore
-
 COPY . .
-RUN dotnet publish -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish -c Release -o /app
 
-# ---------- runtime stage ----------
-FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
+# Use .NET 9 runtime for final image
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
-
-ENV ASPNETCORE_URLS=http://+:8080
-
-COPY --from=build /app/publish .
+COPY --from=build /app .
 ENTRYPOINT ["dotnet", "TodoApp2.dll"]
